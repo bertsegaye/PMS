@@ -1,0 +1,297 @@
+
+legend{
+  margin-left: 70px;
+  height: 500px;
+  width: 900px;
+  border-bottom: none;
+  border-style: none;
+  background-color: lightblue;
+}
+#msg{
+  margin-right: 0px;
+  width: 90%;
+  height: 30px;
+  font-size: 30px;
+
+}
+.msg{
+  margin-left: 70px;
+ display: flex;
+ margin-bottom: 10px;
+}
+legend:focus, input:focus{
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+/*======================most selected admin chat===================*/
+.head{
+      color: black;
+    }
+    .head li i{
+      font-size:smaller;
+    }
+a{
+  color: black;
+}
+
+
+
+
+
+.container_lighter{
+  
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-style: none;
+  border-radius: 10rem;
+  border-bottom-left-radius: 0rem;
+  padding: 10px;
+  /*margin: 10px 0;*/
+  width: 50%;
+  margin-left: 10px;
+  margin-top: 50px;
+  height: auto;
+
+}
+
+.container_lighter img {
+  float: left;
+  max-width: 60px;
+  margin-right: 20px;
+  border-radius: 50%;
+  height: 50px;
+}
+
+.container_lighter img.right {
+ /* float: right;*/
+  margin-left: 20px;
+  margin-right:0;
+  padding-bottom: 10px;
+}
+.container_darker {
+  display: inline-block;
+  border: 2px solid #dedede;
+  background-color: antiquewhite;
+  border-style: none;
+  border-radius: 15rem;
+  border-top-right-radius: 10rem;
+  border-top-left-radius: 10rem;
+  border-bottom-left-radius: 8rem;
+  border-bottom-right-radius: 0rem;
+  padding: 10px;
+  margin:  0;
+
+  width: 50%;
+  margin-left: 400px;
+  margin-top: 50px;
+}
+.container_darker p{
+  margin: 0;
+  padding: 0;
+
+}
+.container_darker img{
+  margin-right:;
+  border-radius: 50%;
+  margin-left:350px ;
+}
+.container_darker img.left {
+  float: right;
+  margin-left: 0;
+  
+  padding-bottom: 10px;
+}
+.im_time{
+  display: flex;
+}
+.darker {   
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+
+
+
+.time-right {
+  width: 10%;
+  float: right;
+  color: #aaa;
+  padding-left: 120px;
+}
+
+.time-left {
+  width: 10%;
+  float: left;
+  color: #999;
+  margin-left: 100px;
+}
+
+legend{
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  
+
+}
+legend p{
+  font-size: 20px;
+
+}
+
+table{
+  margin: 0;
+}
+.fr{
+  background-color: whitesmoke;
+  border-radius: 0rem;
+}
+
+.chbox legend{
+  
+  
+  width: 100%;
+  padding: 0;
+  margin-right: 0px;
+  
+}
+h1{
+position: relative;
+display: initial;
+  }
+  fieldset{
+height: 100%;
+    scroll-behavior: auto;
+    /*height: 280px;
+    max-height: 280px;*/
+    vertical-align: top;
+    overflow: auto;
+  }
+  
+.footer{
+ 
+
+  /*width: 100%;
+  margin-right: 400px;*/
+}
+  .scroll-bar{
+    border-style: none;
+    background-color: lightblue;
+    height: 40%;
+    width: 80%;
+    border-style: none;
+    overflow: auto;
+    
+
+  }
+.equb-scroll{
+   border-style: none;
+    background-color: lightblue;
+    height: 100%;
+    width: 100%;
+    border-style: none;
+    overflow: auto;
+}
+
+
+
+
+/*====================================================
+
+
+.requ{
+
+}
+
+
+
+  #but-request{
+
+margin-bottom: 1000px;
+
+  }
+
+.open-button {
+
+  font-size: 30px;
+  align-content: center;
+  margin-bottom: 300px;
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: ;
+  width: 100%;
+  z-index: 9;
+}
+.open-button button{
+
+  background-color: black;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  margin-right: 500px;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=text] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=text]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}

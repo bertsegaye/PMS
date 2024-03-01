@@ -1,0 +1,46 @@
+/*======================drop down logout and change password==============*/
+	.dd {
+         position: relative;
+         display:inline-block;
+      }
+      .dd-btn {
+         
+         
+      }
+      .dd-content {
+
+         position: absolute;
+         width: 100%;
+         /*box-shadow: 0  9px rgba(0,0,0,0.05), 0 0 rgba(0,0,0,0.5);*/
+         height: 0px;
+         transition: height 2s;
+         overflow: hidden;
+         font-size: 20px;
+         width: 350px;
+         background-color: whitesmoke;
+
+      }
+      .dd-content li{
+         
+      	margin-right: 160px;
+
+      }
+      .dd:hover > .dd-content {
+         height: 70px;
+         width: 350px;
+         margin-right: 200px;
+      }
+        .dd-content > a {
+         display: block;
+         padding: 15px;
+         text-decoration: none;
+         color: black;
+       
+      }
+    
+ .dd-content ol li a{
+        
+         list-style-type: none;
+         
+ 
+      }

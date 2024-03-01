@@ -1,0 +1,330 @@
+
+<?php
+include '../db/connection.php';
+include('session.php');
+//session_start();
+if (!isset($_SESSION['username'])) {
+    header("location:../index.php");
+  }
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
+    <title>WBCHMS for Assosa Correction House </title>
+    <!-- Bootstrap Core CSS -->
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Menu CSS -->
+    <link href="plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+    <!-- animation CSS -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- color CSS -->
+    <link href="css/colors/default.css" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+
+
+</style>
+
+
+
+
+
+</head>
+
+<body class="fix-header">
+    <!-- ============================================================== -->
+    <!-- Preloader -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Wrapper -->
+    <!-- ============================================================== -->
+    <div id="wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <nav class="navbar navbar-default navbar-static-top m-b-0">
+            <div class="navbar-header">
+                <div class="top-left-part">
+                    <!-- Logo -->
+                    <a class="logo" href="index.html">
+                        <!-- Logo icon image, you can use font-icon also --><b>
+                        <!--This is dark logo icon--><img src="plugins/images/admin-logo.png" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="plugins/images/admin-logo-dark.png" alt="home" class="light-logo" />
+                     </b>
+                        <!-- Logo text image you can use text also --><span class="hidden-xs">
+                        <!--This is dark logo text--><img src="plugins/images/admin-text.png" alt="home" class="dark-logo" /><!--This is light logo text--><img src="plugins/images/admin-text-dark.png" alt="home" class="light-logo" />
+                     </span> </a>
+                </div>
+                <!-- /Logo -->
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                    <li>
+                        <form role="search" class="app-search hidden-sm hidden-xs m-r-10">
+                            <input type="text" placeholder="Search..." class="form-control"> <a href=""><i class="fa fa-search"></i></a> </form>
+                    </li>
+                     <li class = "dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="plugins/images/users/varun.jpg" alt="user-img" width="36" class="img-circle"><?php echo $login_session;?></a>
+                        <ul class="dropdown-menu">
+                        <li><a href="change_password.php?user_name=<?php echo $login_session?>"><i class = "fa fa-unlock-alt fa-fw"></i>  Change password</a></li>
+
+                        <li><a href="logout.php"><i class = "glyphicon glyphicon-off fa-fw"></i> Logout</a></li>
+                    </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- End Top Navigation -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav slimscrollsidebar">
+                <div class="sidebar-head">
+                    <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span class="hide-menu">Navigation</span></h3>
+                </div>
+                <ul class="nav" id="side-menu">
+                    <li style="padding: 70px 0 0;">
+                        <a href="index.php" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="add_account.php" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Register Prisoner</a>
+                    </li>
+                    <li>
+                        <a href="basic-table.php" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i>Manage prisoners</a>
+                    </li>
+                  
+                    <li>
+                        <a href="General_report.php" class="waves-effect"><i class="fa fa-registered fa-fw" aria-hidden="true"></i>General Report</a>
+                    </li>
+                    <li>
+                        <a href="view_post.php" class="waves-effect"><i class="fa fa-globe fa-fw" aria-hidden="true"></i>View Announcement</a>
+                    </li>
+
+                    <li>
+                        <a href="room.php" class="waves-effect"><i class="fa fa-bed fa-fw" aria-hidden="true"></i>Assign room</a>
+                    </li>
+                    <li>
+                        <a href="view_room.php" class="waves-effect"><i class="fa fa-university fa-fw" aria-hidden="true"></i>manage room</a>
+                    </li>
+                  
+
+                </ul>
+             
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page Content -->
+        <!-- ============================================================== -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Basic Table</h4> </div>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                    <a href="" target="" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Welcome to Assosa Correction House</a>
+
+                        <ol class="breadcrumb">
+                            <li><a href="#">Dashboard</a></li>
+                            <li class="active">Basic Table</li>
+                        </ol>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /row -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                            <div class = "alert alert-info">Account/change account</div>
+
+                            <?php
+                            
+                           $query = $con->query("SELECT * FROM prisoner, address where prisoner.address_id  = address.address_id AND prisoner.address_id = '$_REQUEST[prisoner_id]'") or die(mysqli_error());
+                            
+                   //$query = $con->query("SELECT * from users_info JOIN users on users_info.serial_no=users.serial_no")or die(mysqli_error());
+                   //$query = $con->query("SELECT * FROM `login` WHERE `id` = '$_GET[admin_id]'") or die(mysqli_error());
+                 $fetch = $query->fetch_array();
+                        ?>
+                            <br />
+                   
+                    <form method = "POST" action = "edit_quiery_account.php?prisoner_id=<?php echo $fetch['address_id']?>" enctype = "multipart/form-data">
+                        <div class = "form-group">
+                            <label>fname </label>
+                            <input type = "text" class = "form-control" value = "<?php echo $fetch['fname']?>"  name = "fname" />
+                        </div>
+                        <div class = "form-group">
+                            <label>lname </label>
+                            <input type = "text" class = "form-control" value = "<?php echo $fetch['lname']?>"  name = "lname" />
+                        </div>
+
+                             <div class = "form-group">
+                            <label>sex </label>
+                            
+                         <select id="sex" name="sex" class = "form-control">
+                            <option value = "">Choose an option</option>
+                            <option value="male" <?php if ($fetch['sex']=="male"){echo "selected";}?>>male</option>
+                            <option value="female" <?php if ($fetch['sex']=="female"){echo "selected";}?>>female</option>
+                             </select>
+                        </div>
+
+
+                        <div class = "form-group">
+                            <label>crime_type </label>
+                            
+                         <select id="crime_type" name="crime_type" class = "form-control">
+                            <option value = "">Choose an option</option>
+                            <option value="rape" <?php if ($fetch['crime_type']=="rape"){echo "selected";}?>>rape</option>
+                            <option value="corruption" <?php if ($fetch['crime_type']=="corruption"){echo "selected";}?>>corruption</option>
+                              <option value="theaft" <?php if ($fetch['crime_type']=="theaft"){echo "selected";}?>>theaft</option>
+                             </select>
+                        </div>
+                        
+                        <div class = "form-group">
+                            <label>age </label>
+                            <input type = "number" class = "form-control" value = "<?php echo $fetch['age']?>"  name = "age" />
+                        </div>
+                        <div class = "form-group">
+                            <label for="tele">tele</label>
+                           <input type="text" class = "form-control" id="tele" value = "<?php echo $fetch['phone']?>" name="tele"  >
+                       </div>
+
+
+
+                        <div class = "form-group">
+                            <label>Photo </label>
+                            <div id = "preview" style = "width:150px; height :150px; border:1px solid #000;">
+                                <img src = "../upload/image/<?php echo $fetch['photo']?>" id = "lbl" width = "100%" height = "100%"/>
+                            </div>
+                            <input type = "file" required = "required" id = "photo" name = "photo" />
+                        </div>
+
+
+
+
+              
+
+
+                          <div class = "form-group">
+                            <label>zone </label>
+                            <input type = "text" class = "form-control" value = "<?php echo $fetch['zone']?>" name = "zone" />
+                        </div>
+
+
+                          <div class = "form-group">
+                            <label>kebele </label>
+                            <input type = "text" class = "form-control" value = "<?php echo $fetch['kebele']?>" name = "kebele" />
+                        </div>
+
+
+
+                        <div class = "form-group">
+                            <label>Region </label>
+                             <select  name="region" class = "form-control"?>" required="">
+                                <option value = "">Choose an option</option>
+
+                            <option value="Afar" <?php if ($fetch['region']=="Afar"){echo "selected";}?>>Afar</option>
+                            <option value="oromia" <?php if ($fetch['region']=="oromia"){echo "selected";}?>>oromia</option>
+                             <option value="Tigray" <?php if ($fetch['region']=="Tigray"){echo "selected";}?>>Tigray</option>
+                              <option value="Amhara" <?php if ($fetch['region']=="Amhara"){echo "selected";}?>>Amhara</option>
+                               <option value="Benishangul" <?php if ($fetch['region']=="Benishangul"){echo "selected";}?>>Benishangul</option>
+                                <option value="Somali" <?php if ($fetch['region']=="Somali"){echo "selected";}?>>Somali</option>
+                                 <option value="snnpr" <?php if ($fetch['region']=="snnpr"){echo "selected";}?>>snnpr</option>
+                                   <option value="Sidama" <?php if ($fetch['region']=="Sidama"){echo "selected";}?>>Sidama</option>
+                                     <option value="Addis Abeba" <?php if ($fetch['region']=="Addis Abeba"){echo "selected";}?>>Addis Abeba</option>
+
+
+
+
+                            </select>
+                        </div>
+                        
+                        <br />
+                        <div class = "form-group">
+                            <button name = "edit_prisoner" class = "btn btn-warning form-control"><i class = "glyphicon glyphicon-edit"></i> Save Changes</button>
+                        </div>
+                    </form>
+
+
+
+
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+            <footer class="footer text-center"> 2023 &copy; Assosa Prison Managment System , All Rights Reserved</footer>
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Menu Plugin JavaScript -->
+    <script src="plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <!--slimscroll JavaScript -->
+    <script src="js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="js/waves.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/custom.min.js"></script>
+
+<script type = "text/javascript">
+    
+    $(document).ready(function(){
+        $pic = $('<img id = "image" width = "100%" height = "100%"/>');
+        $lbl = $('<center id = "lbl">[Photo]</center>');
+        $("#photo").change(function(){
+            $("#lbl").remove();
+            var files = !!this.files ? this.files : [];
+            if(!files.length || !window.FileReader){
+                $("#image").remove();
+                $lbl.appendTo("#preview");
+            }
+            if(/^image/.test(files[0].type)){
+                var reader = new FileReader();
+                reader.readAsDataURL(files[0]);
+                reader.onloadend = function(){
+                    $pic.appendTo("#preview");
+                    $("#image").attr("src", this.result);
+                }
+            }
+        });
+    });
+</script>
+
+
+</body>
+
+
+</html>

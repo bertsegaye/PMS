@@ -1,0 +1,112 @@
+button{background-color: white;
+			border-style: none;
+
+		}
+		
+		tabl:hover{
+			color: blueviolet;
+			/*background-color: steelblue;*/
+		}
+		.fr table{
+			background-color: white;
+			width: 100%;
+			border-bottom: 0.5px solid black;
+			font-size: 25px;
+            border-radius: 0.5rem;
+
+		}
+		.fr  table:hover{
+			 background:rgba(25, 0, 0, 0.2);
+		}
+		/*.fr button:hover{
+			background-color: steelblue;
+		}
+		.fr a{
+			background-color: lightgreen;
+
+margin-top: 5px;
+padding: 5px 15px;
+		}
+
+
+*/
+#topname{
+	font-size: 20px;
+	text-align: center;
+	font-size: 30px;
+
+}
+textarea{
+	margin-left: 0px;
+	
+	height: 500px;
+	/*width: 80%;*/
+	border-bottom: none;
+	border-radius: 1rem;
+	background-color: lightblue;
+}
+#msg-write{
+	margin-left: 450px;
+	width: 65%;
+	height: 30px;
+	font-size: 30px;
+	
+
+}
+.msg button{
+	
+ display: inline-flex;
+}
+.msg button:hover{
+	color: green;
+}
+textarea:focus, input:focus{
+    outline: none;
+}
+.fr{
+	width: 50%;
+}
+.msg-part{
+	display: flex;
+}
+.msg-top input{
+	display: inline-flex;
+	margin-left: 535px;
+	width: 800px;
+
+}
+.btnn{
+	margin-right: 50px;
+}
+
+
+.textarea-container { 
+  position: relative; 
+} 
+.textarea-container textarea { 
+  width: 900px; 
+  /*height: 100%;*/ 
+  box-sizing: border-box; 
+} 
+.textarea-container button { 
+  position: absolute; 
+  margin-top: 457px;
+  margin-right: 400px;
+  top: 0; 
+  right: 0; 
+}
+.textarea-container div { 
+  position: absolute; 
+  margin-top: 100px;
+  padding-top: 50px;
+  margin-left: 700px;
+  margin-right: 250px;
+  width: 300px;
+  height: 100px;
+  text-align: center;
+  top: 0; 
+  right: 0;
+  background-color: white; 
+  padding: 4px 6px;
+  border-radius: 2rem;
+}
